@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-pipeline-agent"
+version = "0.1.0"
+description = "Config-driven ingestion agent for generating Databricks/Spark ETL code using Microsoft Agent Framework."
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.0",
+    "pydantic>=1.10,<3",
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+    "databricks-sdk>=0.19.0",
+    "azure-identity>=1.17.0",
+    "openai>=1.40.0",
+    "httpx>=0.24.0",
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+    # The Microsoft Agent Framework SDK package name may change; install from the official repo if not on PyPI.
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.3"]
+ui = ["streamlit>=1.32"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

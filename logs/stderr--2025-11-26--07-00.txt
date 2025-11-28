@@ -1,0 +1,113 @@
+Wed Nov 26 06:58:05 2025 Connection to spark from PID  1237
+Wed Nov 26 06:58:05 2025 Initialized gateway on port 38857
+Wed Nov 26 06:58:05 2025 Connected to spark.
+Wed Nov 26 06:58:12 2025 Connection to spark from PID  1311
+Wed Nov 26 06:58:12 2025 Initialized gateway on port 36151
+Wed Nov 26 06:58:13 2025 Connected to spark.
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/databricks/spark/python/pyspark/sql/dataframe.py", line 583, in schema
+    StructType, _parse_datatype_json_string(self._jdf.schema().json())
+  File "/databricks/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/databricks/spark/python/pyspark/errors/exceptions.py", line 228, in deco
+    return f(*a, **kw)
+  File "/databricks/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 330, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o465.schema. Trace:
+org.apache.spark.SparkException: Trying to putInheritedProperty with no active spark context
+	at org.apache.spark.credentials.CredentialContext$.$anonfun$putInheritedProperty$2(CredentialContext.scala:188)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.credentials.CredentialContext$.$anonfun$putInheritedProperty$1(CredentialContext.scala:188)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.credentials.CredentialContext$.putInheritedProperty(CredentialContext.scala:187)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.$anonfun$run$2(SparkThreadLocalUtils.scala:56)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.$anonfun$run$2$adapted(SparkThreadLocalUtils.scala:56)
+	at scala.Option.foreach(Option.scala:407)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.run(SparkThreadLocalUtils.scala:56)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:194)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:115)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/databricks/python/lib/python3.9/site-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/databricks/python_shell/dbruntime/DatasetInfo.py", line 21, in post_command_execute
+    new_dataframe_info = self.user_ns.get_new_dataframe_infos_json()
+  File "/databricks/python_shell/dbruntime/DatasetInfo.py", line 113, in get_new_dataframe_infos_json
+    '"schema": %s' % df.schema.json(),
+  File "/databricks/spark/python/pyspark/instrumentation_utils.py", line 80, in wrapper
+    return prop.fget(self)
+  File "/databricks/spark/python/pyspark/sql/dataframe.py", line 586, in schema
+    raise ValueError("Unable to parse datatype from schema. %s" % e) from e
+ValueError: Unable to parse datatype from schema. An error occurred while calling o465.schema. Trace:
+org.apache.spark.SparkException: Trying to putInheritedProperty with no active spark context
+	at org.apache.spark.credentials.CredentialContext$.$anonfun$putInheritedProperty$2(CredentialContext.scala:188)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.credentials.CredentialContext$.$anonfun$putInheritedProperty$1(CredentialContext.scala:188)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.credentials.CredentialContext$.putInheritedProperty(CredentialContext.scala:187)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.$anonfun$run$2(SparkThreadLocalUtils.scala:56)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.$anonfun$run$2$adapted(SparkThreadLocalUtils.scala:56)
+	at scala.Option.foreach(Option.scala:407)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.run(SparkThreadLocalUtils.scala:56)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:194)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:115)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/databricks/python/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/databricks/python/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/databricks/python_shell/dbruntime/DatabricksShell.py", line 60, in do_execute
+    reply_content = await super().do_execute(*args, **kwargs)
+  File "/databricks/python/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/databricks/python/lib/python3.9/site-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/databricks/python/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 2889, in run_cell
+    self.events.trigger('post_execute')
+  File "/databricks/python/lib/python3.9/site-packages/IPython/core/events.py", line 92, in trigger
+    self.shell.showtraceback()
+  File "/databricks/python/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 2008, in showtraceback
+    self._showtraceback(etype, value, stb)
+  File "/databricks/python_shell/dbruntime/DatabricksShell.py", line 40, in _showtraceback
+    truncated_evalue = truncate(full_evalue, limit=get_max_error_message_length(self))
+  File "/databricks/python_shell/dbruntime/utils.py", line 80, in get_max_error_message_length
+    shell.spark_config.get("spark.databricks.driver.ipykernel.maxErrorMessageLength",
+  File "/databricks/spark/python/pyspark/conf.py", line 239, in get
+    return self._jconf.get(key, defaultValue)
+  File "/databricks/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/databricks/spark/python/pyspark/errors/exceptions.py", line 228, in deco
+    return f(*a, **kw)
+  File "/databricks/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 330, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o369.get. Trace:
+org.apache.spark.SparkException: Trying to putInheritedProperty with no active spark context
+	at org.apache.spark.credentials.CredentialContext$.$anonfun$putInheritedProperty$2(CredentialContext.scala:188)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.credentials.CredentialContext$.$anonfun$putInheritedProperty$1(CredentialContext.scala:188)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.credentials.CredentialContext$.putInheritedProperty(CredentialContext.scala:187)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.$anonfun$run$2(SparkThreadLocalUtils.scala:56)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.$anonfun$run$2$adapted(SparkThreadLocalUtils.scala:56)
+	at scala.Option.foreach(Option.scala:407)
+	at com.databricks.backend.daemon.driver.SparkThreadLocalUtils$$anon$1.run(SparkThreadLocalUtils.scala:56)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:194)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:115)
+	at java.lang.Thread.run(Thread.java:750)
+
+

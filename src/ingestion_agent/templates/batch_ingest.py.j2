@@ -1,0 +1,130 @@
+"""
+Auto-generated PySpark ETL script.
+Job: {{ config.job_name }}
+Description: {{ config.description or "N/A" }}
+"""
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col
+
+spark = SparkSession.builder.getOrCreate()
+# Allow legacy path handling to avoid conflicts if a path option is set elsewhere.
+spark.conf.set("spark.sql.legacy.pathOptionBehavior.enabled", "true")
+
+# Apply any Spark/Hadoop configurations from source/sink options
+{% for k, v in config.source.options.items() %}
+{% if k.startswith("fs.") or k.startswith("spark.") or k.startswith("hadoop.") %}
+spark.conf.set("{{ k }}", "{{ v }}")
+{% endif %}
+{% endfor %}
+
+{% for k, v in config.sink.options.items() %}
+{% if k.startswith("fs.") or k.startswith("spark.") or k.startswith("hadoop.") %}
+spark.conf.set("{{ k }}", "{{ v }}")
+{% endif %}
+{% endfor %}
+
+# -----------------------------
+# Source extraction (JDBC)
+# -----------------------------
+jdbc_options = {
+    "url": "{{ config.source.jdbc_url }}",
+    "dbtable": "{{ config.source.table }}",
+    "driver": "{% if config.source.type == 'postgres' %}org.postgresql.Driver{% elif config.source.type == 'mysql' %}com.mysql.cj.jdbc.Driver{% else %}com.microsoft.sqlserver.jdbc.SQLServerDriver{% endif %}",
+}
+{% for k, v in config.source.options.items() %}
+jdbc_options["{{ k }}"] = "{{ v }}"
+{% endfor %}
+{% if config.source.type == 'postgres' %}
+if "sslmode" not in jdbc_options:
+    jdbc_options["sslmode"] = "{{ config.source.options.get('sslmode', 'require') }}"
+{% endif %}
+
+df = spark.read.format("jdbc").options(**jdbc_options).load()
+print(f"Source data loaded. Row count: {df.count()}")
+
+# Incremental predicate placeholder
+{% if config.source.increment_field %}
+increment_col = "{{ config.source.increment_field }}"
+# TODO: inject watermark/bookmark logic here.
+{% endif %}
+
+# -----------------------------
+# Transformations
+# -----------------------------
+{% if config.transformations.select %}
+df = df.select({{ config.transformations.select | map('tojson') | join(', ') }})
+{% endif %}
+
+{% if config.transformations.rename %}
+rename_mappings = {{ config.transformations.rename }}
+for src, dst in rename_mappings.items():
+    df = df.withColumnRenamed(src, dst)
+{% endif %}
+
+{% if config.transformations.convert %}
+convert_mappings = {{ config.transformations.convert }}
+for col_name, target_type in convert_mappings.items():
+    df = df.withColumn(col_name, col(col_name).cast(target_type))
+{% endif %}
+
+{% if config.transformations.aggregate %}
+agg_cfg = {{ config.transformations.aggregate.dict() }}
+import importlib
+fns = importlib.import_module("pyspark.sql.functions")
+agg_exprs = []
+for col_name, func in agg_cfg["metrics"].items():
+    agg_exprs.append(getattr(fns, func.lower())(col(col_name)).alias(f"{func.lower()}_{col_name}"))
+if agg_exprs:
+    df = df.groupBy([col(c) for c in agg_cfg["group_by"]]).agg(*agg_exprs)
+{% endif %}
+
+# -----------------------------
+# Sink (Delta Lake)
+# -----------------------------
+# Do not push path/table identifiers through .options() to avoid save(path) conflicts.
+sink_options = {
+    k: v
+    for k, v in {{ config.sink.options }}.items()
+    if k not in {"path", "table", "database", "catalog", "create_if_not_exists", "layer", "mode"}
+    and not k.startswith(("fs.", "spark.", "hadoop."))
+}
+
+{% if config.sink.table %}
+# Build fully qualified table name
+{% set fq_table = [] %}
+{% if config.sink.catalog %}{% set _ = fq_table.append(config.sink.catalog) %}{% endif %}
+{% if config.sink.database %}{% set _ = fq_table.append(config.sink.database) %}{% endif %}
+{% set _ = fq_table.append(config.sink.table) %}
+{% set table_name = '.'.join(fq_table) %}
+
+print(f"DEBUG: catalog={{ config.sink.catalog }}, database={{ config.sink.database }}, table={{ config.sink.table }}")
+print(f"DEBUG: Final table name: {{ table_name }}")
+
+mode = "{{ config.sink.mode or 'append' }}"
+
+# Ensure schema exists
+{% if config.sink.catalog and config.sink.database %}
+try:
+    spark.sql("CREATE SCHEMA IF NOT EXISTS {{ config.sink.catalog }}.{{ config.sink.database }}")
+    print("Schema {{ config.sink.catalog }}.{{ config.sink.database }} ready")
+except Exception as e:
+    print(f"Schema creation note: {e}")
+{% endif %}
+
+print(f"Writing data to Unity Catalog table: {{ table_name }} with mode: {mode}")
+
+# Use saveAsTable for Unity Catalog managed tables
+# This handles both creation and data write atomically using Managed Identity
+writer = df.write.format("delta").mode(mode).option("mergeSchema", "true").options(**sink_options)
+writer.saveAsTable("{{ table_name }}")
+
+print(f"Table {{ table_name }} saved successfully")
+
+# Verify table data
+row_count = spark.sql("SELECT COUNT(*) as count FROM {{ table_name }}").collect()[0]['count']
+print(f"Table {{ table_name }} now contains {row_count} rows")
+
+{% else %}
+raise ValueError("Sink requires table specification (catalog.database.table)")
+{% endif %}

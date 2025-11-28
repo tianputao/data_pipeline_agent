@@ -1,0 +1,872 @@
+2025-11-26T08:15:10.017+0000: [GC (System.gc()) [PSYoungGen: 2271895K->49427K(2536448K)] 2544125K->321674K(7895552K), 0.0403068 secs] [Times: user=0.09 sys=0.00, real=0.04 secs] 
+2025-11-26T08:15:10.058+0000: [Full GC (System.gc()) [PSYoungGen: 49427K->0K(2536448K)] [ParOldGen: 272246K->112134K(5359104K)] 321674K->112134K(7895552K), [Metaspace: 334123K->334078K(1363968K)], 0.3708063 secs] [Times: user=0.96 sys=0.00, real=0.37 secs] 
+NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
+
+To exit, you will have to explicitly quit this process, by either sending
+"quit" from a client, or using Ctrl-\ in UNIX-like environments.
+
+To read more about this, see https://github.com/ipython/ipython/issues/2049
+
+
+To connect another client to this kernel, use:
+    --existing /databricks/kernel-connections/7e4ac128c767072221fbd3a308b05911d9562bbfe28809c2a804bd259a93fd2a.json
+2025-11-26T08:32:45.929+0000: [GC (Allocation Failure) [PSYoungGen: 2400256K->30130K(2551808K)] 2512390K->142272K(7910912K), 0.0308738 secs] [Times: user=0.05 sys=0.00, real=0.03 secs] 
+NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
+
+To exit, you will have to explicitly quit this process, by either sending
+"quit" from a client, or using Ctrl-\ in UNIX-like environments.
+
+To read more about this, see https://github.com/ipython/ipython/issues/2049
+
+
+To connect another client to this kernel, use:
+    --existing /databricks/kernel-connections/8b67d850cadcc11c1772b40a0a119d4b6b333e161190ecc0301efb1d459a51ea.json
+Spawned detached process
+2025-11-26T08:32:59.478+0000: [GC (Allocation Failure) [PSYoungGen: 2451890K->125908K(2547712K)] 2564032K->238067K(7906816K), 0.0342037 secs] [Times: user=0.10 sys=0.00, real=0.03 secs] 
+2025-11-26 08:34:15,013 Thread-107 WARN RollingFileAppender 'com.databricks.LineageLogging.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26T08:34:15.183+0000: [GC (Allocation Failure) [PSYoungGen: 2547668K->131580K(2481152K)] 2659827K->246640K(7840256K), 0.0551354 secs] [Times: user=0.19 sys=0.00, real=0.06 secs] 
+Error in callback <bound method UserNamespaceCommandHook.post_command_execute of <dbruntime.DatasetInfo.UserNamespaceCommandHook object at 0x7f41f4a92610>> (for post_execute):
+Heap
+ PSYoungGen      total 2481152K, used 336330K [0x000000071c780000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2349568K, 8% used [0x000000071c780000,0x0000000728f73810,0x00000007abe00000)
+  from space 131584K, 99% used [0x00000007b7f80000,0x00000007bffff3a0,0x00000007c0000000)
+  to   space 164864K, 0% used [0x00000007abe00000,0x00000007abe00000,0x00000007b5f00000)
+ ParOldGen       total 5359104K, used 115059K [0x00000005d5600000, 0x000000071c780000, 0x000000071c780000)
+  object space 5359104K, 2% used [0x00000005d5600000,0x00000005dc65cc60,0x000000071c780000)
+ Metaspace       used 415309K, capacity 449072K, committed 449304K, reserved 1449984K
+  class space    used 46265K, capacity 48613K, committed 48688K, reserved 1048576K
+CONF_DRIVER_JAVA_OPTS = -Djava.io.tmpdir=/local_disk0/tmp -XX:-OmitStackTraceInFastThrow -Djava.security.properties=/databricks/spark/dbconf/java/extra.security -XX:-UseContainerSupport -XX:+PrintFlagsFinal -XX:+PrintGCDateStamps -XX:+PrintGCDetails -verbose:gc -Xss4m -Djava.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni -Djavax.xml.datatype.DatatypeFactory=com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Dorg.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser -Dorg.w3c.dom.DOMImplementationSourceList=com.sun.org.apache.xerces.internal.dom.DOMXSImplementationSourceImpl -Djavax.net.ssl.sessionCacheSize=10000 -Dscala.reflect.runtime.disable.typetag.cache=true -Dcom.google.cloud.spark.bigquery.repackaged.io.netty.tryReflectionSetAccessible=true -Dlog4j2.formatMsgNoLookups=true   -Ddatabricks.serviceName=driver-1 -Xms7850m -Xmx7850m -Dspark.ui.port=40001
+CONF_EXECUTOR_JAVA_OPTS = -Dspark.executor.extraJavaOptions="-Djava.io.tmpdir=/local_disk0/tmp -XX:ReservedCodeCacheSize=512m -XX:+UseCodeCacheFlushing -XX:PerMethodRecompilationCutoff=-1 -XX:PerBytecodeRecompilationCutoff=-1 -Djava.security.properties=/databricks/spark/dbconf/java/extra.security -XX:-UseContainerSupport -XX:+PrintFlagsFinal -XX:+PrintGCDateStamps -XX:+PrintGCDetails -verbose:gc -Xss4m -Djava.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni -Djavax.xml.datatype.DatatypeFactory=com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Dorg.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser -Dorg.w3c.dom.DOMImplementationSourceList=com.sun.org.apache.xerces.internal.dom.DOMXSImplementationSourceImpl -Djavax.net.ssl.sessionCacheSize=10000 -Dscala.reflect.runtime.disable.typetag.cache=true -Dcom.google.cloud.spark.bigquery.repackaged.io.netty.tryReflectionSetAccessible=true -Dlog4j2.formatMsgNoLookups=true   -Ddatabricks.serviceName=spark-executor-1" -Dspark.executor.memory=8874m
+JAVA_OPTS =  -Djava.io.tmpdir=/local_disk0/tmp -XX:-OmitStackTraceInFastThrow -Djava.security.properties=/databricks/spark/dbconf/java/extra.security -XX:-UseContainerSupport -XX:+PrintFlagsFinal -XX:+PrintGCDateStamps -XX:+PrintGCDetails -verbose:gc -Xss4m -Djava.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni -Djavax.xml.datatype.DatatypeFactory=com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Dorg.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser -Dorg.w3c.dom.DOMImplementationSourceList=com.sun.org.apache.xerces.internal.dom.DOMXSImplementationSourceImpl -Djavax.net.ssl.sessionCacheSize=10000 -Dscala.reflect.runtime.disable.typetag.cache=true -Dcom.google.cloud.spark.bigquery.repackaged.io.netty.tryReflectionSetAccessible=true -Dlog4j2.formatMsgNoLookups=true   -Ddatabricks.serviceName=driver-1 -Xms7850m -Xmx7850m -Dspark.ui.port=40001 -Dspark.executor.extraJavaOptions="-Djava.io.tmpdir=/local_disk0/tmp -XX:ReservedCodeCacheSize=512m -XX:+UseCodeCacheFlushing -XX:PerMethodRecompilationCutoff=-1 -XX:PerBytecodeRecompilationCutoff=-1 -Djava.security.properties=/databricks/spark/dbconf/java/extra.security -XX:-UseContainerSupport -XX:+PrintFlagsFinal -XX:+PrintGCDateStamps -XX:+PrintGCDetails -verbose:gc -Xss4m -Djava.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni -Djavax.xml.datatype.DatatypeFactory=com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Dorg.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser -Dorg.w3c.dom.DOMImplementationSourceList=com.sun.org.apache.xerces.internal.dom.DOMXSImplementationSourceImpl -Djavax.net.ssl.sessionCacheSize=10000 -Dscala.reflect.runtime.disable.typetag.cache=true -Dcom.google.cloud.spark.bigquery.repackaged.io.netty.tryReflectionSetAccessible=true -Dlog4j2.formatMsgNoLookups=true   -Ddatabricks.serviceName=spark-executor-1" -Dspark.executor.memory=8874m -Dspark.executor.extraClassPath=/databricks/spark/dbconf/log4j/executor:/databricks/spark/dbconf/jets3t/:/databricks/spark/dbconf/hadoop:/databricks/hive/conf:/databricks/jars/*
+Using Spark master spark://10.139.64.5:7077
+Wed Nov 26 08:34:55 UTC 2025
+Starting driver
+Driver command is /usr/lib/jvm/zulu8-ca-amd64/jre//bin/java  -Djava.io.tmpdir=/local_disk0/tmp -XX:-OmitStackTraceInFastThrow -Djava.security.properties=/databricks/spark/dbconf/java/extra.security -XX:-UseContainerSupport -XX:+PrintFlagsFinal -XX:+PrintGCDateStamps -XX:+PrintGCDetails -verbose:gc -Xss4m -Djava.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni -Djavax.xml.datatype.DatatypeFactory=com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Dorg.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser -Dorg.w3c.dom.DOMImplementationSourceList=com.sun.org.apache.xerces.internal.dom.DOMXSImplementationSourceImpl -Djavax.net.ssl.sessionCacheSize=10000 -Dscala.reflect.runtime.disable.typetag.cache=true -Dcom.google.cloud.spark.bigquery.repackaged.io.netty.tryReflectionSetAccessible=true -Dlog4j2.formatMsgNoLookups=true   -Ddatabricks.serviceName=driver-1 -Xms7850m -Xmx7850m -Dspark.ui.port=40001 -Dspark.executor.extraJavaOptions="-Djava.io.tmpdir=/local_disk0/tmp -XX:ReservedCodeCacheSize=512m -XX:+UseCodeCacheFlushing -XX:PerMethodRecompilationCutoff=-1 -XX:PerBytecodeRecompilationCutoff=-1 -Djava.security.properties=/databricks/spark/dbconf/java/extra.security -XX:-UseContainerSupport -XX:+PrintFlagsFinal -XX:+PrintGCDateStamps -XX:+PrintGCDetails -verbose:gc -Xss4m -Djava.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni -Djavax.xml.datatype.DatatypeFactory=com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Dorg.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser -Dorg.w3c.dom.DOMImplementationSourceList=com.sun.org.apache.xerces.internal.dom.DOMXSImplementationSourceImpl -Djavax.net.ssl.sessionCacheSize=10000 -Dscala.reflect.runtime.disable.typetag.cache=true -Dcom.google.cloud.spark.bigquery.repackaged.io.netty.tryReflectionSetAccessible=true -Dlog4j2.formatMsgNoLookups=true   -Ddatabricks.serviceName=spark-executor-1" -Dspark.executor.memory=8874m -Dspark.executor.extraClassPath=/databricks/spark/dbconf/log4j/executor:/databricks/spark/dbconf/jets3t/:/databricks/spark/dbconf/hadoop:/databricks/hive/conf:/databricks/jars/* -cp /databricks/spark/dbconf/jets3t/:/databricks/spark/dbconf/log4j/driver:/databricks/hive/conf:/databricks/spark/dbconf/hadoop:/databricks/jars/* com.databricks.backend.daemon.driver.DriverDaemon &
+Working directory is /databricks/driver
+[Global flags]
+     intx ActiveProcessorCount                      = -1                                  {product}
+    uintx AdaptiveSizeDecrementScaleFactor          = 4                                   {product}
+    uintx AdaptiveSizeMajorGCDecayTimeScale         = 10                                  {product}
+    uintx AdaptiveSizePausePolicy                   = 0                                   {product}
+    uintx AdaptiveSizePolicyCollectionCostMargin    = 50                                  {product}
+    uintx AdaptiveSizePolicyInitializingSteps       = 20                                  {product}
+    uintx AdaptiveSizePolicyOutputInterval          = 0                                   {product}
+    uintx AdaptiveSizePolicyWeight                  = 10                                  {product}
+    uintx AdaptiveSizeThroughPutPolicy              = 0                                   {product}
+    uintx AdaptiveTimeWeight                        = 25                                  {product}
+     bool AdjustConcurrency                         = false                               {product}
+     bool AggressiveHeap                            = false                               {product}
+     bool AggressiveOpts                            = false                               {product}
+     intx AliasLevel                                = 3                                   {C2 product}
+     bool AlignVector                               = false                               {C2 product}
+     intx AllocateInstancePrefetchLines             = 1                                   {product}
+     intx AllocatePrefetchDistance                  = 192                                 {product}
+     intx AllocatePrefetchInstr                     = 3                                   {product}
+     intx AllocatePrefetchLines                     = 4                                   {product}
+     intx AllocatePrefetchStepSize                  = 64                                  {product}
+     intx AllocatePrefetchStyle                     = 1                                   {product}
+     bool AllowJNIEnvProxy                          = false                               {product}
+     bool AllowNonVirtualCalls                      = false                               {product}
+     bool AllowParallelDefineClass                  = false                               {product}
+     bool AllowUserSignalHandlers                   = false                               {product}
+     bool AlwaysActAsServerClassMachine             = false                               {product}
+     bool AlwaysCompileLoopMethods                  = false                               {product}
+     bool AlwaysLockClassLoader                     = false                               {product}
+     bool AlwaysPreTouch                            = false                               {product}
+     bool AlwaysRestoreFPU                          = false                               {product}
+     bool AlwaysTenure                              = false                               {product}
+     bool AssertOnSuspendWaitFailure                = false                               {product}
+     bool AssumeMP                                  = false                               {product}
+     intx AutoBoxCacheMax                           = 128                                 {C2 product}
+    uintx AutoGCSelectPauseMillis                   = 5000                                {product}
+    ccstr AzCRSArguments                            =                                     {product}
+    ccstr AzCRSMode                                 = off                                 {product}
+     intx BCEATraceLevel                            = 0                                   {product}
+     intx BackEdgeThreshold                         = 100000                              {pd product}
+     bool BackgroundCompilation                     = true                                {pd product}
+    uintx BaseFootPrintEstimate                     = 268435456                           {product}
+     intx BiasedLockingBulkRebiasThreshold          = 20                                  {product}
+     intx BiasedLockingBulkRevokeThreshold          = 40                                  {product}
+     intx BiasedLockingDecayTime                    = 25000                               {product}
+     intx BiasedLockingStartupDelay                 = 4000                                {product}
+     bool BindGCTaskThreadsToCPUs                   = false                               {product}
+     bool BlockLayoutByFrequency                    = true                                {C2 product}
+     intx BlockLayoutMinDiamondPercentage           = 20                                  {C2 product}
+     bool BlockLayoutRotateLoops                    = true                                {C2 product}
+     bool BranchOnRegister                          = false                               {C2 product}
+     bool BytecodeVerificationLocal                 = false                               {product}
+     bool BytecodeVerificationRemote                = true                                {product}
+     bool C1OptimizeVirtualCallProfiling            = true                                {C1 product}
+     bool C1ProfileBranches                         = true                                {C1 product}
+     bool C1ProfileCalls                            = true                                {C1 product}
+     bool C1ProfileCheckcasts                       = true                                {C1 product}
+     bool C1ProfileInlinedCalls                     = true                                {C1 product}
+     bool C1ProfileVirtualCalls                     = true                                {C1 product}
+     bool C1UpdateMethodData                        = true                                {C1 product}
+     intx CICompilerCount                          := 3                                   {product}
+     bool CICompilerCountPerCPU                     = true                                {product}
+     bool CITime                                    = false                               {product}
+     bool CMSAbortSemantics                         = false                               {product}
+    uintx CMSAbortablePrecleanMinWorkPerIteration   = 100                                 {product}
+     intx CMSAbortablePrecleanWaitMillis            = 100                                 {manageable}
+    uintx CMSBitMapYieldQuantum                     = 10485760                            {product}
+    uintx CMSBootstrapOccupancy                     = 50                                  {product}
+     bool CMSClassUnloadingEnabled                  = true                                {product}
+    uintx CMSClassUnloadingMaxInterval              = 0                                   {product}
+     bool CMSCleanOnEnter                           = true                                {product}
+     bool CMSCompactWhenClearAllSoftRefs            = true                                {product}
+    uintx CMSConcMarkMultiple                       = 32                                  {product}
+     bool CMSConcurrentMTEnabled                    = true                                {product}
+    uintx CMSCoordinatorYieldSleepCount             = 10                                  {product}
+     bool CMSDumpAtPromotionFailure                 = false                               {product}
+     bool CMSEdenChunksRecordAlways                 = true                                {product}
+    uintx CMSExpAvgFactor                           = 50                                  {product}
+     bool CMSExtrapolateSweep                       = false                               {product}
+    uintx CMSFullGCsBeforeCompaction                = 0                                   {product}
+    uintx CMSIncrementalDutyCycle                   = 10                                  {product}
+    uintx CMSIncrementalDutyCycleMin                = 0                                   {product}
+     bool CMSIncrementalMode                        = false                               {product}
+    uintx CMSIncrementalOffset                      = 0                                   {product}
+     bool CMSIncrementalPacing                      = true                                {product}
+    uintx CMSIncrementalSafetyFactor                = 10                                  {product}
+    uintx CMSIndexedFreeListReplenish               = 4                                   {product}
+     intx CMSInitiatingOccupancyFraction            = -1                                  {product}
+    uintx CMSIsTooFullPercentage                    = 98                                  {product}
+   double CMSLargeCoalSurplusPercent                = 0.950000                            {product}
+   double CMSLargeSplitSurplusPercent               = 1.000000                            {product}
+     bool CMSLoopWarn                               = false                               {product}
+    uintx CMSMaxAbortablePrecleanLoops              = 0                                   {product}
+     intx CMSMaxAbortablePrecleanTime               = 5000                                {product}
+    uintx CMSOldPLABMax                             = 1024                                {product}
+    uintx CMSOldPLABMin                             = 16                                  {product}
+    uintx CMSOldPLABNumRefills                      = 4                                   {product}
+    uintx CMSOldPLABReactivityFactor                = 2                                   {product}
+     bool CMSOldPLABResizeQuicker                   = false                               {product}
+    uintx CMSOldPLABToleranceFactor                 = 4                                   {product}
+     bool CMSPLABRecordAlways                       = true                                {product}
+    uintx CMSParPromoteBlocksToClaim                = 16                                  {product}
+     bool CMSParallelInitialMarkEnabled             = true                                {product}
+     bool CMSParallelRemarkEnabled                  = true                                {product}
+     bool CMSParallelSurvivorRemarkEnabled          = true                                {product}
+    uintx CMSPrecleanDenominator                    = 3                                   {product}
+    uintx CMSPrecleanIter                           = 3                                   {product}
+    uintx CMSPrecleanNumerator                      = 2                                   {product}
+     bool CMSPrecleanRefLists1                      = true                                {product}
+     bool CMSPrecleanRefLists2                      = false                               {product}
+     bool CMSPrecleanSurvivors1                     = false                               {product}
+     bool CMSPrecleanSurvivors2                     = true                                {product}
+    uintx CMSPrecleanThreshold                      = 1000                                {product}
+     bool CMSPrecleaningEnabled                     = true                                {product}
+     bool CMSPrintChunksInDump                      = false                               {product}
+     bool CMSPrintEdenSurvivorChunks                = false                               {product}
+     bool CMSPrintObjectsInDump                     = false                               {product}
+    uintx CMSRemarkVerifyVariant                    = 1                                   {product}
+     bool CMSReplenishIntermediate                  = true                                {product}
+    uintx CMSRescanMultiple                         = 32                                  {product}
+    uintx CMSSamplingGrain                          = 16384                               {product}
+     bool CMSScavengeBeforeRemark                   = false                               {product}
+    uintx CMSScheduleRemarkEdenPenetration          = 50                                  {product}
+    uintx CMSScheduleRemarkEdenSizeThreshold        = 2097152                             {product}
+    uintx CMSScheduleRemarkSamplingRatio            = 5                                   {product}
+   double CMSSmallCoalSurplusPercent                = 1.050000                            {product}
+   double CMSSmallSplitSurplusPercent               = 1.100000                            {product}
+     bool CMSSplitIndexedFreeListBlocks             = true                                {product}
+     intx CMSTriggerInterval                        = -1                                  {manageable}
+    uintx CMSTriggerRatio                           = 80                                  {product}
+     intx CMSWaitDuration                           = 2000                                {manageable}
+    uintx CMSWorkQueueDrainThreshold                = 10                                  {product}
+     bool CMSYield                                  = true                                {product}
+    uintx CMSYieldSleepCount                        = 0                                   {product}
+    uintx CMSYoungGenPerWorker                      = 67108864                            {pd product}
+    uintx CMS_FLSPadding                            = 1                                   {product}
+    uintx CMS_FLSWeight                             = 75                                  {product}
+    uintx CMS_SweepPadding                          = 1                                   {product}
+    uintx CMS_SweepTimerThresholdMillis             = 10                                  {product}
+    uintx CMS_SweepWeight                           = 75                                  {product}
+     bool CheckEndorsedAndExtDirs                   = false                               {product}
+     bool CheckJNICalls                             = false                               {product}
+     bool ClassUnloading                            = true                                {product}
+     bool ClassUnloadingWithConcurrentMark          = true                                {product}
+     intx ClearFPUAtPark                            = 0                                   {product}
+     bool ClipInlining                              = true                                {product}
+    uintx CodeCacheExpansionSize                    = 65536                               {pd product}
+    uintx CodeCacheMinimumFreeSpace                 = 512000                              {product}
+     bool CollectGen0First                          = false                               {product}
+     bool CompactFields                             = true                                {product}
+     intx CompilationPolicyChoice                   = 3                                   {product}
+ccstrlist CompileCommand                            =                                     {product}
+    ccstr CompileCommandFile                        =                                     {product}
+ccstrlist CompileOnly                               =                                     {product}
+     intx CompileThreshold                          = 10000                               {pd product}
+     bool CompilerThreadHintNoPreempt               = true                                {product}
+     intx CompilerThreadPriority                    = -1                                  {product}
+     intx CompilerThreadStackSize                   = 0                                   {pd product}
+    uintx CompressedClassSpaceSize                  = 1073741824                          {product}
+    uintx ConcGCThreads                             = 0                                   {product}
+     intx ConditionalMoveLimit                      = 3                                   {C2 pd product}
+     intx ContendedPaddingWidth                     = 128                                 {product}
+     bool ConvertSleepToYield                       = true                                {pd product}
+     bool ConvertYieldToSleep                       = false                               {product}
+     bool CrashOnOutOfMemoryError                   = false                               {product}
+     bool CreateMinidumpOnCrash                     = false                               {product}
+     bool CriticalJNINatives                        = true                                {product}
+     bool DTraceAllocProbes                         = false                               {product}
+     bool DTraceMethodProbes                        = false                               {product}
+     bool DTraceMonitorProbes                       = false                               {product}
+     bool Debugging                                 = false                               {product}
+    uintx DefaultMaxRAMFraction                     = 4                                   {product}
+     intx DefaultThreadPriority                     = -1                                  {product}
+     intx DeferPollingPageLoopCount                 = -1                                  {product}
+     intx DeferThrSuspendLoopCount                  = 4000                                {product}
+     bool DeoptimizeRandom                          = false                               {product}
+     bool DisableAttachMechanism                    = false                               {product}
+     bool DisableExplicitGC                         = false                               {product}
+     bool DisplayVMOutputToStderr                   = false                               {product}
+     bool DisplayVMOutputToStdout                   = false                               {product}
+     bool DoEscapeAnalysis                          = true                                {C2 product}
+     bool DontCompileHugeMethods                    = true                                {product}
+     bool DontYieldALot                             = false                               {pd product}
+    ccstr DumpLoadedClassList                       =                                     {product}
+     bool DumpReplayDataOnError                     = true                                {product}
+     bool DumpSharedSpaces                          = false                               {product}
+     bool EagerXrunInit                             = false                               {product}
+     intx EliminateAllocationArraySizeLimit         = 64                                  {C2 product}
+     bool EliminateAllocations                      = true                                {C2 product}
+     bool EliminateAutoBox                          = true                                {C2 product}
+     bool EliminateLocks                            = true                                {C2 product}
+     bool EliminateNestedLocks                      = true                                {C2 product}
+     intx EmitSync                                  = 0                                   {product}
+     bool EnableContended                           = true                                {product}
+     bool EnableTracing                             = false                               {product}
+    uintx ErgoHeapSizeLimit                         = 0                                   {product}
+    ccstr ErrorFile                                 =                                     {product}
+     bool ErrorFileToStderr                         = false                               {product}
+     bool ErrorFileToStdout                         = false                               {product}
+    ccstr ErrorReportServer                         =                                     {product}
+   double EscapeAnalysisTimeout                     = 20.000000                           {C2 product}
+     bool EstimateArgEscape                         = true                                {product}
+     bool ExitOnOutOfMemoryError                    = false                               {product}
+     bool ExplicitGCInvokesConcurrent               = false                               {product}
+     bool ExplicitGCInvokesConcurrentAndUnloadsClasses  = false                               {product}
+     bool ExtendedDTraceProbes                      = false                               {product}
+    ccstr ExtraSharedClassListFile                  =                                     {product}
+     bool FLSAlwaysCoalesceLarge                    = false                               {product}
+    uintx FLSCoalescePolicy                         = 2                                   {product}
+   double FLSLargestBlockCoalesceProximity          = 0.990000                            {product}
+     bool FailOverToOldVerifier                     = true                                {product}
+     bool FastTLABRefill                            = true                                {product}
+     intx FenceInstruction                          = 0                                   {ARCH product}
+     intx FieldsAllocationStyle                     = 1                                   {product}
+     bool FilterSpuriousWakeups                     = true                                {product}
+     bool FlightRecorder                            = false                               {product}
+    ccstr FlightRecorderOptions                     =                                     {product}
+     bool ForceNUMA                                 = false                               {product}
+     bool ForceTimeHighResolution                   = false                               {product}
+     intx FreqInlineSize                            = 325                                 {pd product}
+   double G1ConcMarkStepDurationMillis              = 10.000000                           {product}
+    uintx G1ConcRSHotCardLimit                      = 4                                   {product}
+    uintx G1ConcRSLogCacheSize                      = 10                                  {product}
+     intx G1ConcRefinementGreenZone                 = 0                                   {product}
+     intx G1ConcRefinementRedZone                   = 0                                   {product}
+     intx G1ConcRefinementServiceIntervalMillis     = 300                                 {product}
+    uintx G1ConcRefinementThreads                   = 0                                   {product}
+     intx G1ConcRefinementThresholdStep             = 0                                   {product}
+     intx G1ConcRefinementYellowZone                = 0                                   {product}
+    uintx G1ConfidencePercent                       = 50                                  {product}
+    uintx G1HeapRegionSize                          = 0                                   {product}
+    uintx G1HeapWastePercent                        = 5                                   {product}
+    uintx G1MixedGCCountTarget                      = 8                                   {product}
+     intx G1RSetRegionEntries                       = 0                                   {product}
+    uintx G1RSetScanBlockSize                       = 64                                  {product}
+     intx G1RSetSparseRegionEntries                 = 0                                   {product}
+     intx G1RSetUpdatingPauseTimePercent            = 10                                  {product}
+     intx G1RefProcDrainInterval                    = 10                                  {product}
+    uintx G1ReservePercent                          = 10                                  {product}
+    uintx G1SATBBufferEnqueueingThresholdPercent    = 60                                  {product}
+     intx G1SATBBufferSize                          = 1024                                {product}
+     intx G1UpdateBufferSize                        = 256                                 {product}
+     bool G1UseAdaptiveConcRefinement               = true                                {product}
+    uintx GCDrainStackTargetSize                    = 64                                  {product}
+    uintx GCHeapFreeLimit                           = 2                                   {product}
+    uintx GCLockerEdenExpansionPercent              = 5                                   {product}
+     bool GCLockerInvokesConcurrent                 = false                               {product}
+    uintx GCLogFileSize                             = 8192                                {product}
+    uintx GCPauseIntervalMillis                     = 0                                   {product}
+    uintx GCTaskTimeStampEntries                    = 200                                 {product}
+    uintx GCTimeLimit                               = 98                                  {product}
+    uintx GCTimeRatio                               = 99                                  {product}
+    uintx HeapBaseMinAddress                        = 2147483648                          {pd product}
+     bool HeapDumpAfterFullGC                       = false                               {manageable}
+     bool HeapDumpBeforeFullGC                      = false                               {manageable}
+     bool HeapDumpOnOutOfMemoryError                = false                               {manageable}
+    ccstr HeapDumpPath                              =                                     {manageable}
+    uintx HeapFirstMaximumCompactionCount           = 3                                   {product}
+    uintx HeapMaximumCompactionInterval             = 20                                  {product}
+    uintx HeapSizePerGCThread                       = 87241520                            {product}
+     bool IgnoreEmptyClassPaths                     = false                               {product}
+     bool IgnoreUnrecognizedVMOptions               = false                               {product}
+    uintx IncreaseFirstTierCompileThresholdAt       = 50                                  {product}
+     bool IncrementalInline                         = true                                {C2 product}
+    uintx InitialBootClassLoaderMetaspaceSize       = 4194304                             {product}
+    uintx InitialCodeCacheSize                      = 2555904                             {pd product}
+    uintx InitialHeapSize                          := 8231321600                          {product}
+    uintx InitialRAMFraction                        = 64                                  {product}
+   double InitialRAMPercentage                      = 1.562500                            {product}
+    uintx InitialSurvivorRatio                      = 8                                   {product}
+    uintx InitialTenuringThreshold                  = 7                                   {product}
+    uintx InitiatingHeapOccupancyPercent            = 45                                  {product}
+     bool Inline                                    = true                                {product}
+    ccstr InlineDataFile                            =                                     {product}
+     intx InlineSmallCode                           = 2000                                {pd product}
+     bool InlineSynchronizedMethods                 = true                                {C1 product}
+     bool InsertMemBarAfterArraycopy                = true                                {C2 product}
+     intx InteriorEntryAlignment                    = 16                                  {C2 pd product}
+     intx InterpreterProfilePercentage              = 33                                  {product}
+     bool JNIDetachReleasesMonitors                 = true                                {product}
+     bool JavaMonitorsInStackTrace                  = true                                {product}
+     intx JavaPriority10_To_OSPriority              = -1                                  {product}
+     intx JavaPriority1_To_OSPriority               = -1                                  {product}
+     intx JavaPriority2_To_OSPriority               = -1                                  {product}
+     intx JavaPriority3_To_OSPriority               = -1                                  {product}
+     intx JavaPriority4_To_OSPriority               = -1                                  {product}
+     intx JavaPriority5_To_OSPriority               = -1                                  {product}
+     intx JavaPriority6_To_OSPriority               = -1                                  {product}
+     intx JavaPriority7_To_OSPriority               = -1                                  {product}
+     intx JavaPriority8_To_OSPriority               = -1                                  {product}
+     intx JavaPriority9_To_OSPriority               = -1                                  {product}
+     bool LIRFillDelaySlots                         = false                               {C1 pd product}
+    uintx LargePageHeapSizeThreshold                = 134217728                           {product}
+    uintx LargePageSizeInBytes                      = 0                                   {product}
+     bool LazyBootClassLoader                       = true                                {product}
+     intx LiveNodeCountInliningCutoff               = 40000                               {C2 product}
+     bool LoadExecStackDllInVMThread                = true                                {product}
+     bool LogJFR                                    = false                               {product}
+     intx LoopMaxUnroll                             = 16                                  {C2 product}
+     intx LoopOptsCount                             = 43                                  {C2 product}
+     intx LoopUnrollLimit                           = 60                                  {C2 pd product}
+     intx LoopUnrollMin                             = 4                                   {C2 product}
+     bool LoopUnswitching                           = true                                {C2 product}
+     bool ManagementServer                          = false                               {product}
+    uintx MarkStackSize                             = 4194304                             {product}
+    uintx MarkStackSizeMax                          = 536870912                           {product}
+    uintx MarkSweepAlwaysCompactCount               = 4                                   {product}
+    uintx MarkSweepDeadRatio                        = 1                                   {product}
+     intx MaxBCEAEstimateLevel                      = 5                                   {product}
+     intx MaxBCEAEstimateSize                       = 150                                 {product}
+    uintx MaxDirectMemorySize                       = 0                                   {product}
+     bool MaxFDLimit                                = true                                {product}
+    uintx MaxGCMinorPauseMillis                     = 18446744073709551615                    {product}
+    uintx MaxGCPauseMillis                          = 18446744073709551615                    {product}
+    uintx MaxHeapFreeRatio                          = 100                                 {manageable}
+    uintx MaxHeapSize                              := 8231321600                          {product}
+     intx MaxInlineLevel                            = 9                                   {product}
+     intx MaxInlineSize                             = 35                                  {product}
+     intx MaxJNILocalCapacity                       = 65536                               {product}
+     intx MaxJavaStackTraceDepth                    = 1024                                {product}
+     intx MaxJumpTableSize                          = 65000                               {C2 product}
+     intx MaxJumpTableSparseness                    = 5                                   {C2 product}
+     intx MaxLabelRootDepth                         = 1100                                {C2 product}
+     intx MaxLoopPad                                = 11                                  {C2 product}
+    uintx MaxMetaspaceExpansion                     = 5451776                             {product}
+    uintx MaxMetaspaceFreeRatio                     = 70                                  {product}
+    uintx MaxMetaspaceSize                          = 18446744073709547520                    {product}
+    uintx MaxNewSize                               := 2743599104                          {product}
+     intx MaxNodeLimit                              = 75000                               {C2 product}
+ uint64_t MaxRAM                                    = 137438953472                        {pd product}
+    uintx MaxRAMFraction                            = 4                                   {product}
+   double MaxRAMPercentage                          = 25.000000                           {product}
+     intx MaxRecursiveInlineLevel                   = 1                                   {product}
+    uintx MaxTenuringThreshold                      = 15                                  {product}
+     intx MaxTrivialSize                            = 6                                   {product}
+     intx MaxVectorSize                             = 32                                  {C2 product}
+    uintx MetaspaceSize                             = 21807104                            {pd product}
+     bool MethodFlushing                            = true                                {product}
+    uintx MinHeapDeltaBytes                        := 524288                              {product}
+    uintx MinHeapFreeRatio                          = 0                                   {manageable}
+     intx MinInliningThreshold                      = 250                                 {product}
+     intx MinJumpTableSize                          = 10                                  {C2 pd product}
+    uintx MinMetaspaceExpansion                     = 339968                              {product}
+    uintx MinMetaspaceFreeRatio                     = 40                                  {product}
+    uintx MinRAMFraction                            = 2                                   {product}
+   double MinRAMPercentage                          = 50.000000                           {product}
+    uintx MinSurvivorRatio                          = 3                                   {product}
+    uintx MinTLABSize                               = 2048                                {product}
+     intx MonitorBound                              = 0                                   {product}
+     bool MonitorInUseLists                         = false                               {product}
+     intx MultiArrayExpandLimit                     = 6                                   {C2 product}
+     bool MustCallLoadClassInternal                 = false                               {product}
+    uintx NUMAChunkResizeWeight                     = 20                                  {product}
+    uintx NUMAInterleaveGranularity                 = 2097152                             {product}
+    uintx NUMAPageScanRate                          = 256                                 {product}
+    uintx NUMASpaceResizeRate                       = 1073741824                          {product}
+     bool NUMAStats                                 = false                               {product}
+    ccstr NativeMemoryTracking                      = off                                 {product}
+     bool NeedsDeoptSuspend                         = false                               {pd product}
+     bool NeverActAsServerClassMachine              = false                               {pd product}
+     bool NeverTenure                               = false                               {product}
+    uintx NewRatio                                  = 2                                   {product}
+    uintx NewSize                                  := 2743599104                          {product}
+    uintx NewSizeThreadIncrease                     = 5320                                {pd product}
+     intx NmethodSweepActivity                      = 10                                  {product}
+     intx NmethodSweepCheckInterval                 = 5                                   {product}
+     intx NmethodSweepFraction                      = 16                                  {product}
+     intx NodeLimitFudgeFactor                      = 2000                                {C2 product}
+    uintx NumberOfGCLogFiles                        = 0                                   {product}
+     intx NumberOfLoopInstrToAlign                  = 4                                   {C2 product}
+     intx ObjectAlignmentInBytes                    = 8                                   {lp64_product}
+    uintx OldPLABSize                               = 1024                                {product}
+    uintx OldPLABWeight                             = 50                                  {product}
+    uintx OldSize                                  := 5487722496                          {product}
+     bool OmitStackTraceInFastThrow                := false                               {product}
+ccstrlist OnError                                   =                                     {product}
+ccstrlist OnOutOfMemoryError                        =                                     {product}
+     intx OnStackReplacePercentage                  = 140                                 {pd product}
+     bool OptimizeFill                              = true                                {C2 product}
+     bool OptimizePtrCompare                        = true                                {C2 product}
+     bool OptimizeStringConcat                      = true                                {C2 product}
+     bool OptoBundling                              = false                               {C2 pd product}
+     intx OptoLoopAlignment                         = 16                                  {pd product}
+     bool OptoScheduling                            = false                               {C2 pd product}
+     bool OverrideVMProperties                      = false                               {product}
+    uintx PLABWeight                                = 75                                  {product}
+     bool PSChunkLargeArrays                        = true                                {product}
+     intx ParGCArrayScanChunk                       = 50                                  {product}
+    uintx ParGCDesiredObjsFromOverflowList          = 20                                  {product}
+     bool ParGCTrimOverflow                         = true                                {product}
+     bool ParGCUseLocalOverflow                     = false                               {product}
+    uintx ParallelGCBufferWastePct                  = 10                                  {product}
+    uintx ParallelGCThreads                         = 4                                   {product}
+     bool ParallelGCVerbose                         = false                               {product}
+    uintx ParallelOldDeadWoodLimiterMean            = 50                                  {product}
+    uintx ParallelOldDeadWoodLimiterStdDev          = 80                                  {product}
+     bool ParallelRefProcBalancingEnabled           = true                                {product}
+     bool ParallelRefProcEnabled                    = false                               {product}
+     bool PartialPeelAtUnsignedTests                = true                                {C2 product}
+     bool PartialPeelLoop                           = true                                {C2 product}
+     intx PartialPeelNewPhiDelta                    = 0                                   {C2 product}
+    uintx PausePadding                              = 1                                   {product}
+     intx PerBytecodeRecompilationCutoff            = 200                                 {product}
+     intx PerBytecodeTrapLimit                      = 4                                   {product}
+     intx PerMethodRecompilationCutoff              = 400                                 {product}
+     intx PerMethodTrapLimit                        = 100                                 {product}
+     bool PerfAllowAtExitRegistration               = false                               {product}
+     bool PerfBypassFileSystemCheck                 = false                               {product}
+     intx PerfDataMemorySize                        = 32768                               {product}
+     intx PerfDataSamplingInterval                  = 50                                  {product}
+    ccstr PerfDataSaveFile                          =                                     {product}
+     bool PerfDataSaveToFile                        = false                               {product}
+     bool PerfDisableSharedMem                      = false                               {product}
+     intx PerfMaxStringConstLength                  = 1024                                {product}
+     intx PreInflateSpin                            = 10                                  {pd product}
+     bool PreferContainerQuotaForCPUCount           = true                                {product}
+     bool PreferInterpreterNativeStubs              = false                               {pd product}
+     intx PrefetchCopyIntervalInBytes               = 576                                 {product}
+     intx PrefetchFieldsAhead                       = 1                                   {product}
+     intx PrefetchScanIntervalInBytes               = 576                                 {product}
+     bool PreserveAllAnnotations                    = false                               {product}
+     bool PreserveFramePointer                      = false                               {pd product}
+    uintx PretenureSizeThreshold                    = 0                                   {product}
+     bool PrintAdaptiveSizePolicy                   = false                               {product}
+     bool PrintCMSInitiationStatistics              = false                               {product}
+     intx PrintCMSStatistics                        = 0                                   {product}
+     bool PrintClassHistogram                       = false                               {manageable}
+     bool PrintClassHistogramAfterFullGC            = false                               {manageable}
+     bool PrintClassHistogramBeforeFullGC           = false                               {manageable}
+     bool PrintCodeCache                            = false                               {product}
+     bool PrintCodeCacheOnCompilation               = false                               {product}
+     bool PrintCommandLineFlags                     = false                               {product}
+     bool PrintCompilation                          = false                               {product}
+     bool PrintConcurrentLocks                      = false                               {manageable}
+     intx PrintFLSCensus                            = 0                                   {product}
+     intx PrintFLSStatistics                        = 0                                   {product}
+     bool PrintFlagsFinal                          := true                                {product}
+     bool PrintFlagsInitial                         = false                               {product}
+     bool PrintGC                                  := true                                {manageable}
+     bool PrintGCApplicationConcurrentTime          = false                               {product}
+     bool PrintGCApplicationStoppedTime             = false                               {product}
+     bool PrintGCCause                              = true                                {product}
+     bool PrintGCDateStamps                        := true                                {manageable}
+     bool PrintGCDetails                           := true                                {manageable}
+     bool PrintGCID                                 = false                               {manageable}
+     bool PrintGCTaskTimeStamps                     = false                               {product}
+     bool PrintGCTimeStamps                         = false                               {manageable}
+     bool PrintHeapAtGC                             = false                               {product rw}
+     bool PrintHeapAtGCExtended                     = false                               {product rw}
+     bool PrintHeapAtSIGBREAK                       = true                                {product}
+     bool PrintJNIGCStalls                          = false                               {product}
+     bool PrintJNIResolving                         = false                               {product}
+     bool PrintOldPLAB                              = false                               {product}
+     bool PrintOopAddress                           = false                               {product}
+     bool PrintPLAB                                 = false                               {product}
+     bool PrintParallelOldGCPhaseTimes              = false                               {product}
+     bool PrintPromotionFailure                     = false                               {product}
+     bool PrintReferenceGC                          = false                               {product}
+     bool PrintSafepointStatistics                  = false                               {product}
+     intx PrintSafepointStatisticsCount             = 300                                 {product}
+     intx PrintSafepointStatisticsTimeout           = -1                                  {product}
+     bool PrintSharedArchiveAndExit                 = false                               {product}
+     bool PrintSharedDictionary                     = false                               {product}
+     bool PrintSharedSpaces                         = false                               {product}
+     bool PrintStringDeduplicationStatistics        = false                               {product}
+     bool PrintStringTableStatistics                = false                               {product}
+     bool PrintTLAB                                 = false                               {product}
+     bool PrintTenuringDistribution                 = false                               {product}
+     bool PrintTieredEvents                         = false                               {product}
+     bool PrintVMOptions                            = false                               {product}
+     bool PrintVMQWaitTime                          = false                               {product}
+     bool PrintWarnings                             = true                                {product}
+    uintx ProcessDistributionStride                 = 4                                   {product}
+     bool ProfileInterpreter                        = true                                {pd product}
+     bool ProfileIntervals                          = false                               {product}
+     intx ProfileIntervalsTicks                     = 100                                 {product}
+     intx ProfileMaturityPercentage                 = 20                                  {product}
+     bool ProfileVM                                 = false                               {product}
+     bool ProfilerPrintByteCodeStatistics           = false                               {product}
+     bool ProfilerRecordPC                          = false                               {product}
+    uintx PromotedPadding                           = 3                                   {product}
+    uintx QueuedAllocationWarningCount              = 0                                   {product}
+    uintx RTMRetryCount                             = 5                                   {ARCH product}
+     bool RangeCheckElimination                     = true                                {product}
+     intx ReadPrefetchInstr                         = 0                                   {ARCH product}
+     bool ReassociateInvariants                     = true                                {C2 product}
+     bool ReduceBulkZeroing                         = true                                {C2 product}
+     bool ReduceFieldZeroing                        = true                                {C2 product}
+     bool ReduceInitialCardMarks                    = true                                {C2 product}
+     bool ReduceSignalUsage                         = false                               {product}
+     intx RefDiscoveryPolicy                        = 0                                   {product}
+     bool ReflectionWrapResolutionErrors            = true                                {product}
+     bool RegisterFinalizersAtInit                  = true                                {product}
+     bool RelaxAccessControlCheck                   = false                               {product}
+    ccstr ReplayDataFile                            =                                     {product}
+     bool RequireSharedSpaces                       = false                               {product}
+    uintx ReservedCodeCacheSize                     = 251658240                           {pd product}
+     bool ResizeOldPLAB                             = true                                {product}
+     bool ResizePLAB                                = true                                {product}
+     bool ResizeTLAB                                = true                                {pd product}
+     bool RestoreMXCSROnJNICalls                    = false                               {product}
+     bool RestrictContended                         = true                                {product}
+     bool RestrictReservedStack                     = true                                {product}
+     bool RewriteBytecodes                          = true                                {pd product}
+     bool RewriteFrequentPairs                      = true                                {pd product}
+     intx SafepointPollOffset                       = 256                                 {C1 pd product}
+     intx SafepointSpinBeforeYield                  = 2000                                {product}
+     bool SafepointTimeout                          = false                               {product}
+     intx SafepointTimeoutDelay                     = 10000                               {product}
+     bool ScavengeBeforeFullGC                      = true                                {product}
+     intx SelfDestructTimer                         = 0                                   {product}
+    uintx SharedBaseAddress                         = 34359738368                         {product}
+    ccstr SharedClassListFile                       =                                     {product}
+    uintx SharedMiscCodeSize                        = 122880                              {product}
+    uintx SharedMiscDataSize                        = 4194304                             {product}
+    uintx SharedReadOnlySize                        = 16777216                            {product}
+    uintx SharedReadWriteSize                       = 16777216                            {product}
+     bool ShowMessageBoxOnError                     = false                               {product}
+     intx SoftRefLRUPolicyMSPerMB                   = 1000                                {product}
+     bool SpecialEncodeISOArray                     = true                                {C2 product}
+     bool SplitIfBlocks                             = true                                {C2 product}
+     intx StackRedPages                             = 1                                   {pd product}
+     intx StackReservedPages                        = 1                                   {pd product}
+     intx StackShadowPages                          = 20                                  {pd product}
+     bool StackTraceInThrowable                     = true                                {product}
+     intx StackYellowPages                          = 2                                   {pd product}
+     bool StartAttachListener                       = false                               {product}
+    ccstr StartFlightRecording                      =                                     {product}
+     intx StarvationMonitorInterval                 = 200                                 {product}
+     bool StressLdcRewrite                          = false                               {product}
+    uintx StringDeduplicationAgeThreshold           = 3                                   {product}
+    uintx StringTableSize                           = 60013                               {product}
+     bool SuppressFatalErrorMessage                 = false                               {product}
+    uintx SurvivorPadding                           = 3                                   {product}
+    uintx SurvivorRatio                             = 8                                   {product}
+     intx SuspendRetryCount                         = 50                                  {product}
+     intx SuspendRetryDelay                         = 5                                   {product}
+     intx SyncFlags                                 = 0                                   {product}
+    ccstr SyncKnobs                                 =                                     {product}
+     intx SyncVerbose                               = 0                                   {product}
+    uintx TLABAllocationWeight                      = 35                                  {product}
+    uintx TLABRefillWasteFraction                   = 64                                  {product}
+    uintx TLABSize                                  = 0                                   {product}
+     bool TLABStats                                 = true                                {product}
+    uintx TLABWasteIncrement                        = 4                                   {product}
+    uintx TLABWasteTargetPercent                    = 1                                   {product}
+    uintx TargetPLABWastePct                        = 10                                  {product}
+    uintx TargetSurvivorRatio                       = 50                                  {product}
+    uintx TenuredGenerationSizeIncrement            = 20                                  {product}
+    uintx TenuredGenerationSizeSupplement           = 80                                  {product}
+    uintx TenuredGenerationSizeSupplementDecay      = 2                                   {product}
+     intx ThreadPriorityPolicy                      = 0                                   {product}
+     bool ThreadPriorityVerbose                     = false                               {product}
+    uintx ThreadSafetyMargin                        = 52428800                            {product}
+     intx ThreadStackSize                          := 4096                                {pd product}
+    uintx ThresholdTolerance                        = 10                                  {product}
+     intx Tier0BackedgeNotifyFreqLog                = 10                                  {product}
+     intx Tier0InvokeNotifyFreqLog                  = 7                                   {product}
+     intx Tier0ProfilingStartPercentage             = 200                                 {product}
+     intx Tier23InlineeNotifyFreqLog                = 20                                  {product}
+     intx Tier2BackEdgeThreshold                    = 0                                   {product}
+     intx Tier2BackedgeNotifyFreqLog                = 14                                  {product}
+     intx Tier2CompileThreshold                     = 0                                   {product}
+     intx Tier2InvokeNotifyFreqLog                  = 11                                  {product}
+     intx Tier3BackEdgeThreshold                    = 60000                               {product}
+     intx Tier3BackedgeNotifyFreqLog                = 13                                  {product}
+     intx Tier3CompileThreshold                     = 2000                                {product}
+     intx Tier3DelayOff                             = 2                                   {product}
+     intx Tier3DelayOn                              = 5                                   {product}
+     intx Tier3InvocationThreshold                  = 200                                 {product}
+     intx Tier3InvokeNotifyFreqLog                  = 10                                  {product}
+     intx Tier3LoadFeedback                         = 5                                   {product}
+     intx Tier3MinInvocationThreshold               = 100                                 {product}
+     intx Tier4BackEdgeThreshold                    = 40000                               {product}
+     intx Tier4CompileThreshold                     = 15000                               {product}
+     intx Tier4InvocationThreshold                  = 5000                                {product}
+     intx Tier4LoadFeedback                         = 3                                   {product}
+     intx Tier4MinInvocationThreshold               = 600                                 {product}
+     bool TieredCompilation                         = true                                {pd product}
+     intx TieredCompileTaskTimeout                  = 50                                  {product}
+     intx TieredRateUpdateMaxTime                   = 25                                  {product}
+     intx TieredRateUpdateMinTime                   = 1                                   {product}
+     intx TieredStopAtLevel                         = 4                                   {product}
+     bool TimeLinearScan                            = false                               {C1 product}
+     bool TraceBiasedLocking                        = false                               {product}
+     bool TraceBiasedLockingDateStamp               = false                               {product}
+     bool TraceClassLoading                         = false                               {product rw}
+     bool TraceClassLoadingPreorder                 = false                               {product}
+     bool TraceClassPaths                           = false                               {product}
+     bool TraceClassResolution                      = false                               {product}
+     bool TraceClassUnloading                       = false                               {product rw}
+     bool TraceDynamicGCThreads                     = false                               {product}
+     bool TraceExceptions                           = false                               {product}
+     bool TraceGen0Time                             = false                               {product}
+     bool TraceGen1Time                             = false                               {product}
+    ccstr TraceJVMTI                                =                                     {product}
+     bool TraceLoaderConstraints                    = false                               {product rw}
+     bool TraceMetadataHumongousAllocation          = false                               {product}
+     bool TraceMonitorInflation                     = false                               {product}
+     bool TraceParallelOldGCTasks                   = false                               {product}
+     intx TraceRedefineClasses                      = 0                                   {product}
+     bool TraceSafepointCleanupTime                 = false                               {product}
+     bool TraceSuspendWaitFailures                  = false                               {product}
+     intx TrackedInitializationLimit                = 50                                  {C2 product}
+     bool TransmitErrorReport                       = false                               {product}
+     bool TrapBasedNullChecks                       = false                               {pd product}
+     bool TrapBasedRangeChecks                      = false                               {C2 pd product}
+     intx TypeProfileArgsLimit                      = 2                                   {product}
+    uintx TypeProfileLevel                          = 111                                 {pd product}
+     intx TypeProfileMajorReceiverPercent           = 90                                  {C2 product}
+     intx TypeProfileParmsLimit                     = 2                                   {product}
+     intx TypeProfileWidth                          = 2                                   {product}
+     intx UnguardOnExecutionViolation               = 0                                   {product}
+     bool UnlinkSymbolsALot                         = false                               {product}
+     bool UnlockCommercialFeatures                  = false                               {product}
+     bool Use486InstrsOnly                          = false                               {ARCH product}
+     bool UseAES                                    = true                                {product}
+     bool UseAESCTRIntrinsics                       = true                                {product}
+     bool UseAESIntrinsics                          = true                                {product}
+     intx UseAVX                                    = 2                                   {ARCH product}
+     bool UseAdaptiveGCBoundary                     = false                               {product}
+     bool UseAdaptiveGenerationSizePolicyAtMajorCollection  = true                                {product}
+     bool UseAdaptiveGenerationSizePolicyAtMinorCollection  = true                                {product}
+     bool UseAdaptiveNUMAChunkSizing                = true                                {product}
+     bool UseAdaptiveSizeDecayMajorGCCost           = true                                {product}
+     bool UseAdaptiveSizePolicy                     = true                                {product}
+     bool UseAdaptiveSizePolicyFootprintGoal        = true                                {product}
+     bool UseAdaptiveSizePolicyWithSystemGC         = false                               {product}
+     bool UseAddressNop                             = true                                {ARCH product}
+     bool UseAltSigs                                = false                               {product}
+     bool UseAutoGCSelectPolicy                     = false                               {product}
+     bool UseBMI1Instructions                       = true                                {ARCH product}
+     bool UseBMI2Instructions                       = true                                {ARCH product}
+     bool UseBiasedLocking                          = true                                {product}
+     bool UseBimorphicInlining                      = true                                {C2 product}
+     bool UseBoundThreads                           = true                                {product}
+     bool UseCLMUL                                  = true                                {ARCH product}
+     bool UseCMSBestFit                             = true                                {product}
+     bool UseCMSCollectionPassing                   = true                                {product}
+     bool UseCMSCompactAtFullCollection             = true                                {product}
+     bool UseCMSInitiatingOccupancyOnly             = false                               {product}
+     bool UseCRC32Intrinsics                        = true                                {product}
+     bool UseCodeCacheFlushing                      = true                                {product}
+     bool UseCompiler                               = true                                {product}
+     bool UseCompilerSafepoints                     = true                                {product}
+     bool UseCompressedClassPointers               := true                                {lp64_product}
+     bool UseCompressedOops                        := true                                {lp64_product}
+     bool UseConcMarkSweepGC                        = false                               {product}
+     bool UseCondCardMark                           = false                               {C2 product}
+     bool UseContainerSupport                      := false                               {product}
+     bool UseCountLeadingZerosInstruction           = true                                {ARCH product}
+     bool UseCountTrailingZerosInstruction          = true                                {ARCH product}
+     bool UseCountedLoopSafepoints                  = false                               {C2 product}
+     bool UseCounterDecay                           = true                                {product}
+     bool UseDivMod                                 = true                                {C2 product}
+     bool UseDynamicNumberOfGCThreads               = false                               {product}
+     bool UseFPUForSpilling                         = true                                {C2 product}
+     bool UseFastAccessorMethods                    = false                               {product}
+     bool UseFastEmptyMethods                       = false                               {product}
+     bool UseFastJNIAccessors                       = true                                {product}
+     bool UseFastStosb                              = true                                {ARCH product}
+     bool UseG1GC                                   = false                               {product}
+     bool UseGCLogFileRotation                      = false                               {product}
+     bool UseGCOverheadLimit                        = true                                {product}
+     bool UseGCTaskAffinity                         = false                               {product}
+     bool UseGHASHIntrinsics                        = true                                {product}
+     bool UseHeavyMonitors                          = false                               {product}
+     bool UseHugeTLBFS                              = false                               {product}
+     bool UseInlineCaches                           = true                                {product}
+     bool UseInterpreter                            = true                                {product}
+     bool UseJumpTables                             = true                                {C2 product}
+     bool UseLWPSynchronization                     = true                                {product}
+     bool UseLargePages                             = false                               {pd product}
+     bool UseLargePagesInMetaspace                  = false                               {product}
+     bool UseLargePagesIndividualAllocation         = false                               {pd product}
+     bool UseLegacyJNINameEscaping                  = false                               {product}
+     bool UseLinuxPosixThreadCPUClocks              = true                                {product}
+     bool UseLockedTracing                          = false                               {product}
+     bool UseLoopCounter                            = true                                {product}
+     bool UseLoopInvariantCodeMotion                = true                                {C1 product}
+     bool UseLoopPredicate                          = true                                {C2 product}
+     bool UseMathExactIntrinsics                    = true                                {C2 product}
+     bool UseMaximumCompactionOnSystemGC            = true                                {product}
+     bool UseMembar                                 = false                               {pd product}
+     bool UseMontgomeryMultiplyIntrinsic            = true                                {C2 product}
+     bool UseMontgomerySquareIntrinsic              = true                                {C2 product}
+     bool UseMulAddIntrinsic                        = true                                {C2 product}
+     bool UseMultiplyToLenIntrinsic                 = true                                {C2 product}
+     bool UseNUMA                                   = false                               {product}
+     bool UseNUMAInterleaving                       = false                               {product}
+     bool UseNewLongLShift                          = false                               {ARCH product}
+     bool UseOSErrorReporting                       = false                               {pd product}
+     bool UseOnStackReplacement                     = true                                {pd product}
+     bool UseOnlyInlinedBimorphic                   = true                                {C2 product}
+     bool UseOprofile                               = false                               {product}
+     bool UseOptoBiasInlining                       = true                                {C2 product}
+     bool UsePSAdaptiveSurvivorSizePolicy           = true                                {product}
+     bool UseParNewGC                               = false                               {product}
+     bool UseParallelGC                            := true                                {product}
+     bool UseParallelOldGC                          = true                                {product}
+     bool UsePerfData                               = true                                {product}
+     bool UsePopCountInstruction                    = true                                {product}
+     bool UseRDPCForConstantTableBase               = false                               {C2 product}
+     bool UseRTMDeopt                               = false                               {ARCH product}
+     bool UseRTMLocking                             = false                               {ARCH product}
+     bool UseSHA                                    = false                               {product}
+     bool UseSHA1Intrinsics                         = false                               {product}
+     bool UseSHA256Intrinsics                       = false                               {product}
+     bool UseSHA512Intrinsics                       = false                               {product}
+     bool UseSHM                                    = false                               {product}
+     intx UseSSE                                    = 4                                   {product}
+     bool UseSSE42Intrinsics                        = true                                {product}
+     bool UseSerialGC                               = false                               {product}
+     bool UseSharedSpaces                           = false                               {product}
+     bool UseSignalChaining                         = true                                {product}
+     bool UseSquareToLenIntrinsic                   = true                                {C2 product}
+     bool UseStoreImmI16                            = false                               {ARCH product}
+     bool UseStringDeduplication                    = false                               {product}
+     bool UseSuperWord                              = true                                {C2 product}
+     bool UseSystemFloatModulo                      = false                               {ARCH product}
+     bool UseTLAB                                   = true                                {pd product}
+     bool UseThreadPriorities                       = true                                {pd product}
+     bool UseTransparentHugePages                   = false                               {product}
+     bool UseTypeProfile                            = true                                {product}
+     bool UseTypeSpeculation                        = true                                {C2 product}
+     bool UseUnalignedLoadStores                    = true                                {ARCH product}
+     bool UseVMInterruptibleIO                      = false                               {product}
+     bool UseXMMForArrayCopy                        = true                                {product}
+     bool UseXmmI2D                                 = false                               {ARCH product}
+     bool UseXmmI2F                                 = false                               {ARCH product}
+     bool UseXmmLoadAndClearUpper                   = true                                {ARCH product}
+     bool UseXmmRegToRegMoveAll                     = true                                {ARCH product}
+     bool VMThreadHintNoPreempt                     = false                               {product}
+     intx VMThreadPriority                          = -1                                  {product}
+     intx VMThreadStackSize                         = 1024                                {pd product}
+     intx ValueMapInitialSize                       = 11                                  {C1 product}
+     intx ValueMapMaxLoopSize                       = 8                                   {C1 product}
+     intx ValueSearchLimit                          = 1000                                {C2 product}
+     bool VerifyMergedCPBytecodes                   = true                                {product}
+     bool VerifySharedSpaces                        = false                               {product}
+     intx WorkAroundNPTLTimedWaitHang               = 1                                   {product}
+    uintx YoungGenerationSizeIncrement              = 20                                  {product}
+    uintx YoungGenerationSizeSupplement             = 80                                  {product}
+    uintx YoungGenerationSizeSupplementDecay        = 8                                   {product}
+    uintx YoungPLABSize                             = 4096                                {product}
+     bool ZeroTLAB                                  = false                               {product}
+     intx hashCode                                  = 5                                   {product}
+2025-11-26T08:34:57.995+0000: [GC (Metadata GC Threshold) [PSYoungGen: 763649K->21237K(2344448K)] 763649K->21317K(7703552K), 0.0117867 secs] [Times: user=0.02 sys=0.01, real=0.01 secs] 
+2025-11-26T08:34:58.007+0000: [Full GC (Metadata GC Threshold) [PSYoungGen: 21237K->0K(2344448K)] [ParOldGen: 80K->20520K(5359104K)] 21317K->20520K(7703552K), [Metaspace: 20770K->20770K(1069056K)], 0.0346902 secs] [Times: user=0.08 sys=0.00, real=0.04 secs] 
+2025-11-26T08:34:58.225+0000: [GC (Metadata GC Threshold) [PSYoungGen: 120576K->8160K(2344448K)] 141096K->28689K(7703552K), 0.0040131 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+2025-11-26T08:34:58.229+0000: [Full GC (Metadata GC Threshold) [PSYoungGen: 8160K->0K(2344448K)] [ParOldGen: 20528K->17055K(5359104K)] 28689K->17055K(7703552K), [Metaspace: 34904K->34904K(1081344K)], 0.0153347 secs] [Times: user=0.03 sys=0.00, real=0.01 secs] 
+2025-11-26T08:34:58.979+0000: [GC (Metadata GC Threshold) [PSYoungGen: 321536K->21774K(2344448K)] 338591K->38837K(7703552K), 0.0092424 secs] [Times: user=0.03 sys=0.00, real=0.01 secs] 
+2025-11-26T08:34:58.989+0000: [Full GC (Metadata GC Threshold) [PSYoungGen: 21774K->0K(2344448K)] [ParOldGen: 17063K->29644K(5359104K)] 38837K->29644K(7703552K), [Metaspace: 58385K->58385K(1103872K)], 0.0580662 secs] [Times: user=0.19 sys=0.00, real=0.05 secs] 
+2025-11-26T08:35:00.765+0000: [GC (Metadata GC Threshold) [PSYoungGen: 1045119K->33365K(2344448K)] 1074763K->63017K(7703552K), 0.0151740 secs] [Times: user=0.02 sys=0.01, real=0.02 secs] 
+2025-11-26T08:35:00.780+0000: [Full GC (Metadata GC Threshold) [PSYoungGen: 33365K->0K(2344448K)] [ParOldGen: 29652K->44344K(5359104K)] 63017K->44344K(7703552K), [Metaspace: 97640K->97640K(1140736K)], 0.0297299 secs] [Times: user=0.06 sys=0.00, real=0.03 secs] 
+2025-11-26 08:35:02,888 main WARN RollingFileAppender 'publicFile.rolling': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:02,909 main WARN RollingFileAppender 'privateFile.rolling': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:02,912 main WARN RollingFileAppender 'com.databricks.UsageLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:02,914 main WARN RollingFileAppender 'com.databricks.EventLoggingStats.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:02,916 main WARN RollingFileAppender 'com.databricks.ProductLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:02,917 main WARN RollingFileAppender 'com.databricks.LineageLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:02,919 main WARN RollingFileAppender 'com.databricks.MetricsLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:02,921 main WARN RollingFileAppender 'dltExecution.rolling': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:35:03,015 main WARN RollingFileAppender 'com.databricks.logging.structured.KubernetesEventLog.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,017 main WARN RollingFileAppender 'com.databricks.logging.structured.DpHmrNonQueryEvent.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,018 main WARN RollingFileAppender 'com.databricks.logging.structured.LumberjackLineageEvent.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,019 main WARN RollingFileAppender 'com.databricks.logging.structured.QueryProfileLog.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,020 main WARN RollingFileAppender 'com.databricks.logging.structured.ServiceRequestLog.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,022 main WARN RollingFileAppender 'com.databricks.logging.structured.IntegrationTestLog.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,023 main WARN RollingFileAppender 'com.databricks.logging.structured.RequestActivityLog.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,024 main WARN RollingFileAppender 'com.databricks.logging.structured.PipelineEvent.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:03,025 main WARN RollingFileAppender 'com.databricks.logging.structured.PrometheusMetricsSnapshot.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26T08:35:04.058+0000: [GC (Allocation Failure) [PSYoungGen: 2009600K->33446K(2344448K)] 2053944K->77799K(7703552K), 0.0127907 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+DB_HOME: /databricks
+2025-11-26 08:35:05,735 UptimeLogger:driver WARN RollingFileAppender 'com.databricks.UsageLogging.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26 08:35:05,790 UptimeLogger:driver WARN RollingFileAppender 'com.databricks.ProductLogging.appender': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26T08:35:06.456+0000: [GC (Metadata GC Threshold) [PSYoungGen: 1062137K->37005K(2627072K)] 1106490K->81366K(7986176K), 0.0331649 secs] [Times: user=0.09 sys=0.01, real=0.04 secs] 
+2025-11-26T08:35:06.489+0000: [Full GC (Metadata GC Threshold) [PSYoungGen: 37005K->0K(2627072K)] [ParOldGen: 44360K->54512K(5359104K)] 81366K->54512K(7986176K), [Metaspace: 161860K->161860K(1200128K)], 0.0855748 secs] [Times: user=0.21 sys=0.00, real=0.08 secs] 
+2025-11-26T08:35:10.507+0000: [GC (Allocation Failure) [PSYoungGen: 2583040K->48111K(2631168K)] 2637552K->268964K(7990272K), 0.1254605 secs] [Times: user=0.35 sys=0.07, real=0.13 secs] 
+2025-11-26 08:35:11,620 main WARN RollingFileAppender 'spark_usage': The bufferSize is set to 128000 but bufferedIO is not true
+2025-11-26T08:35:16.220+0000: [GC (Metadata GC Threshold) [PSYoungGen: 2589303K->48104K(2422272K)] 2810155K->326195K(7781376K), 0.0494189 secs] [Times: user=0.14 sys=0.02, real=0.05 secs] 
+2025-11-26T08:35:16.269+0000: [Full GC (Metadata GC Threshold) [PSYoungGen: 48104K->0K(2422272K)] [ParOldGen: 278091K->273913K(5359104K)] 326195K->273913K(7781376K), [Metaspace: 262650K->262635K(1296384K)], 0.4200585 secs] [Times: user=1.32 sys=0.01, real=0.42 secs] 
+2025-11-26T08:35:29.243+0000: [GC (Allocation Failure) [PSYoungGen: 2374144K->52483K(2526720K)] 2648057K->326404K(7885824K), 0.0411643 secs] [Times: user=0.11 sys=0.01, real=0.04 secs] 
+Wed Nov 26 08:35:33 UTC 2025 Starting R processing from BASH
+Wed Nov 26 08:35:33 UTC 2025 R script: /local_disk0/tmp/_rServeScript.r8242366840946531846resource.r
+Wed Nov 26 08:35:33 UTC 2025 Port number: 1103
+Wed Nov 26 08:35:33 UTC 2025 cgroup: None
+2025-11-26 08:35:33 R process started with pid 9302 
+-- running Rserve in this R session (pid=9302), 1 server(s) --
+(This session will block until Rserve is shut down)
+Spark package found in SPARK_HOME: /databricks/spark
+DATABRICKS_STDOUT_END-21823805-9739-42ed-bcf9-e4ae66dc2abb-1764146135786
+2025-11-26 08:40:21,610 metastoreChecker WARN RollingFileAppender 'publicFile.rolling': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:40:21,612 metastoreChecker WARN RollingFileAppender 'privateFile.rolling': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:40:21,613 metastoreChecker WARN RollingFileAppender 'com.databricks.UsageLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:40:21,614 metastoreChecker WARN RollingFileAppender 'com.databricks.EventLoggingStats.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:40:21,615 metastoreChecker WARN RollingFileAppender 'com.databricks.ProductLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:40:21,616 metastoreChecker WARN RollingFileAppender 'com.databricks.LineageLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:40:21,617 metastoreChecker WARN RollingFileAppender 'com.databricks.MetricsLogging.appender': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26 08:40:21,619 metastoreChecker WARN RollingFileAppender 'dltExecution.rolling': The bufferSize is set to 8192 but bufferedIO is not true
+2025-11-26T08:45:56.601+0000: [GC (Allocation Failure) [PSYoungGen: 2426627K->63048K(2542592K)] 2700548K->336993K(7901696K), 0.0497249 secs] [Times: user=0.10 sys=0.00, real=0.05 secs] 
+NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
+
+To exit, you will have to explicitly quit this process, by either sending
+"quit" from a client, or using Ctrl-\ in UNIX-like environments.
+
+To read more about this, see https://github.com/ipython/ipython/issues/2049
+
+
+To connect another client to this kernel, use:
+    --existing /databricks/kernel-connections/13d89155979bb83a245207eafccb013300ac34a425b99e94a22676b631786f7b.json
+NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
+
+To exit, you will have to explicitly quit this process, by either sending
+"quit" from a client, or using Ctrl-\ in UNIX-like environments.
+
+To read more about this, see https://github.com/ipython/ipython/issues/2049
+
+
+To connect another client to this kernel, use:
+    --existing /databricks/kernel-connections/1b2b5c17d58a6182639389c2af040c96766aa4aab8e5c6a9326f06ca7adf7357.json
+Spawned detached process
+2025-11-26T08:46:09.063+0000: [GC (Allocation Failure) [PSYoungGen: 2462280K->136681K(2499072K)] 2736225K->422585K(7858176K), 0.0541885 secs] [Times: user=0.18 sys=0.00, real=0.06 secs] 
+2025-11-26T08:47:22.669+0000: [GC (Allocation Failure) [PSYoungGen: 2497960K->143329K(2446848K)] 2783864K->448522K(7805952K), 0.0769358 secs] [Times: user=0.24 sys=0.01, real=0.07 secs] 
+2025-11-26 08:47:25,401 Thread-99 WARN RollingFileAppender 'com.databricks.LineageLogging.appender': The bufferSize is set to 128000 but bufferedIO is not true
+{"packages": [{"name": "argon2-cffi", "version": "21.3.0", "category": "runtime"}, {"name": "argon2-cffi-bindings", "version": "21.2.0", "category": "runtime"}, {"name": "asttokens", "version": "2.0.5", "category": "runtime"}, {"name": "attrs", "version": "21.4.0", "category": "runtime"}, {"name": "backcall", "version": "0.2.0", "category": "runtime"}, {"name": "backports.entry-points-selectable", "version": "1.2.0", "category": "runtime"}, {"name": "beautifulsoup4", "version": "4.11.1", "category": "runtime"}, {"name": "black", "version": "22.3.0", "category": "runtime"}, {"name": "bleach", "version": "4.1.0", "category": "runtime"}, {"name": "boto3", "version": "1.21.32", "category": "runtime"}, {"name": "botocore", "version": "1.24.32", "category": "runtime"}, {"name": "certifi", "version": "2021.10.8", "category": "runtime"}, {"name": "cffi", "version": "1.15.0", "category": "runtime"}, {"name": "chardet", "version": "4.0.0", "category": "runtime"}, {"name": "charset-normalizer", "version": "2.0.4", "category": "runtime"}, {"name": "click", "version": "8.0.4", "category": "runtime"}, {"name": "cryptography", "version": "3.4.8", "category": "runtime"}, {"name": "cycler", "version": "0.11.0", "category": "runtime"}, {"name": "Cython", "version": "0.29.28", "category": "runtime"}, {"name": "dbus-python", "version": "1.2.16", "category": "runtime"}, {"name": "debugpy", "version": "1.5.1", "category": "runtime"}, {"name": "decorator", "version": "5.1.1", "category": "runtime"}, {"name": "defusedxml", "version": "0.7.1", "category": "runtime"}, {"name": "distlib", "version": "0.3.6", "category": "runtime"}, {"name": "distro", "version": "1.4.0", "category": "runtime"}, {"name": "distro-info", "version": "0.23+ubuntu1.1", "category": "runtime"}, {"name": "docstring-to-markdown", "version": "0.11", "category": "runtime"}, {"name": "entrypoints", "version": "0.4", "category": "runtime"}, {"name": "executing", "version": "0.8.3", "category": "runtime"}, {"name": "facets-overview", "version": "1.0.0", "category": "runtime"}, {"name": "fastjsonschema", "version": "2.16.2", "category": "runtime"}, {"name": "filelock", "version": "3.9.0", "category": "runtime"}, {"name": "fonttools", "version": "4.25.0", "category": "runtime"}, {"name": "idna", "version": "3.3", "category": "runtime"}, {"name": "ipykernel", "version": "6.15.3", "category": "runtime"}, {"name": "ipython", "version": "8.5.0", "category": "runtime"}, {"name": "ipython-genutils", "version": "0.2.0", "category": "runtime"}, {"name": "ipywidgets", "version": "7.7.2", "category": "runtime"}, {"name": "jedi", "version": "0.18.1", "category": "runtime"}, {"name": "Jinja2", "version": "2.11.3", "category": "runtime"}, {"name": "jmespath", "version": "0.10.0", "category": "runtime"}, {"name": "joblib", "version": "1.1.1", "category": "runtime"}, {"name": "jsonschema", "version": "4.4.0", "category": "runtime"}, {"name": "jupyter-client", "version": "6.1.12", "category": "runtime"}, {"name": "jupyter_core", "version": "4.11.2", "category": "runtime"}, {"name": "jupyterlab-pygments", "version": "0.1.2", "category": "runtime"}, {"name": "jupyterlab-widgets", "version": "1.0.0", "category": "runtime"}, {"name": "kiwisolver", "version": "1.3.2", "category": "runtime"}, {"name": "MarkupSafe", "version": "2.0.1", "category": "runtime"}, {"name": "matplotlib", "version": "3.5.1", "category": "runtime"}, {"name": "matplotlib-inline", "version": "0.1.2", "category": "runtime"}, {"name": "mccabe", "version": "0.7.0", "category": "runtime"}, {"name": "mistune", "version": "0.8.4", "category": "runtime"}, {"name": "mypy-extensions", "version": "0.4.3", "category": "runtime"}, {"name": "nbclient", "version": "0.5.13", "category": "runtime"}, {"name": "nbconvert", "version": "6.4.4", "category": "runtime"}, {"name": "nbformat", "version": "5.3.0", "category": "runtime"}, {"name": "nest-asyncio", "version": "1.5.5", "category": "runtime"}, {"name": "nodeenv", "version": "1.7.0", "category": "runtime"}, {"name": "notebook", "version": "6.4.8", "category": "runtime"}, {"name": "numpy", "version": "1.21.5", "category": "runtime"}, {"name": "packaging", "version": "21.3", "category": "runtime"}, {"name": "pandas", "version": "1.4.2", "category": "runtime"}, {"name": "pandocfilters", "version": "1.5.0", "category": "runtime"}, {"name": "parso", "version": "0.8.3", "category": "runtime"}, {"name": "pathspec", "version": "0.9.0", "category": "runtime"}, {"name": "patsy", "version": "0.5.2", "category": "runtime"}, {"name": "pexpect", "version": "4.8.0", "category": "runtime"}, {"name": "pickleshare", "version": "0.7.5", "category": "runtime"}, {"name": "Pillow", "version": "9.0.1", "category": "runtime"}, {"name": "pip", "version": "21.2.4", "category": "notebook"}, {"name": "platformdirs", "version": "2.6.2", "category": "runtime"}, {"name": "plotly", "version": "5.6.0", "category": "runtime"}, {"name": "pluggy", "version": "1.0.0", "category": "runtime"}, {"name": "prometheus-client", "version": "0.13.1", "category": "runtime"}, {"name": "prompt-toolkit", "version": "3.0.20", "category": "runtime"}, {"name": "protobuf", "version": "3.19.4", "category": "runtime"}, {"name": "psutil", "version": "5.8.0", "category": "runtime"}, {"name": "psycopg2", "version": "2.9.3", "category": "runtime"}, {"name": "ptyprocess", "version": "0.7.0", "category": "runtime"}, {"name": "pure-eval", "version": "0.2.2", "category": "runtime"}, {"name": "pyarrow", "version": "7.0.0", "category": "runtime"}, {"name": "pyarrow-hotfix", "version": "0.5", "category": "runtime"}, {"name": "pycparser", "version": "2.21", "category": "runtime"}, {"name": "pyflakes", "version": "2.5.0", "category": "runtime"}, {"name": "Pygments", "version": "2.11.2", "category": "runtime"}, {"name": "PyGObject", "version": "3.36.0", "category": "runtime"}, {"name": "pyodbc", "version": "4.0.32", "category": "runtime"}, {"name": "pyparsing", "version": "3.0.4", "category": "runtime"}, {"name": "pyright", "version": "1.1.283", "category": "runtime"}, {"name": "pyrsistent", "version": "0.18.0", "category": "runtime"}, {"name": "python-apt", "version": "2.0.1+ubuntu0.20.4.1", "category": "runtime"}, {"name": "python-dateutil", "version": "2.8.2", "category": "runtime"}, {"name": "python-lsp-jsonrpc", "version": "1.0.0", "category": "runtime"}, {"name": "python-lsp-server", "version": "1.6.0", "category": "runtime"}, {"name": "pytz", "version": "2021.3", "category": "runtime"}, {"name": "pyzmq", "version": "22.3.0", "category": "runtime"}, {"name": "requests", "version": "2.27.1", "category": "runtime"}, {"name": "requests-unixsocket", "version": "0.2.0", "category": "runtime"}, {"name": "rope", "version": "0.22.0", "category": "runtime"}, {"name": "s3transfer", "version": "0.5.0", "category": "runtime"}, {"name": "scikit-learn", "version": "1.0.2", "category": "runtime"}, {"name": "scipy", "version": "1.7.3", "category": "runtime"}, {"name": "seaborn", "version": "0.11.2", "category": "runtime"}, {"name": "Send2Trash", "version": "1.8.0", "category": "runtime"}, {"name": "setuptools", "version": "61.2.0", "category": "runtime"}, {"name": "six", "version": "1.16.0", "category": "runtime"}, {"name": "soupsieve", "version": "2.3.1", "category": "runtime"}, {"name": "ssh-import-id", "version": "5.10", "category": "runtime"}, {"name": "stack-data", "version": "0.2.0", "category": "runtime"}, {"name": "statsmodels", "version": "0.13.2", "category": "runtime"}, {"name": "tenacity", "version": "8.0.1", "category": "runtime"}, {"name": "terminado", "version": "0.13.1", "category": "runtime"}, {"name": "testpath", "version": "0.5.0", "category": "runtime"}, {"name": "threadpoolctl", "version": "2.2.0", "category": "runtime"}, {"name": "tokenize-rt", "version": "4.2.1", "category": "runtime"}, {"name": "tomli", "version": "1.2.2", "category": "runtime"}, {"name": "tornado", "version": "6.1", "category": "runtime"}, {"name": "traitlets", "version": "5.1.1", "category": "runtime"}, {"name": "typing_extensions", "version": "4.1.1", "category": "runtime"}, {"name": "ujson", "version": "5.1.0", "category": "runtime"}, {"name": "unattended-upgrades", "version": "0.1", "category": "runtime"}, {"name": "urllib3", "version": "1.26.9", "category": "runtime"}, {"name": "virtualenv", "version": "20.8.0", "category": "runtime"}, {"name": "wcwidth", "version": "0.2.5", "category": "runtime"}, {"name": "webencodings", "version": "0.5.1", "category": "runtime"}, {"name": "whatthepatch", "version": "1.0.4", "category": "runtime"}, {"name": "wheel", "version": "0.37.0", "category": "runtime"}, {"name": "widgetsnbextension", "version": "3.6.1", "category": "runtime"}, {"name": "yapf", "version": "0.31.0", "category": "runtime"}], "error": {"error": ""}}
+

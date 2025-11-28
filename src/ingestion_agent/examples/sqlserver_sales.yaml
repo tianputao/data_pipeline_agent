@@ -1,0 +1,33 @@
+job_name: ingest_dbo_sales_to_silver_sales
+description: "Extract sales data from SQL Server and load to Databricks silver layer"
+
+source:
+  type: sqlserver  # Options: postgres, mysql, sqlserver
+  jdbc_url: jdbc:sqlserver://【填写主机名】.database.windows.net:1433;database=【填写数据库名】
+  table: dbo.sales  # Format: schema.table (SQL Server defaults to 'dbo' schema)
+  frequency: daily
+  # increment_field: created_date  # Optional: for incremental extraction
+  options:
+    user: 【填写用户名】
+    password: 【填写密码】
+    encrypt: "true"  # Required for Azure SQL Server
+    trustServerCertificate: "false"
+
+transformations:
+  select: ["*"]  # ["*"] for all fields, or specify: [sale_id, product_id, amount, sale_date]
+  # rename:  # Optional: rename columns
+  #   sale_date: transaction_date
+  # convert:  # Optional: convert data types
+  #   amount: double
+  # filter:  # Optional: filter rows
+  #   condition: "amount > 0 AND status = 'completed'"
+
+sink:
+  type: delta  # Always use delta for Unity Catalog
+  catalog: uc_tarhone  # Unity Catalog name (must be created in workspace)
+  database: silver  # Schema name in Unity Catalog
+  table: sales  # Table name
+  layer: silver  # Options: bronze, silver, gold
+  mode: overwrite  # Options: overwrite, append
+  options: {}  # Additional Delta Lake options
+  # path: abfss://container@storage.dfs.core.chinacloudapi.cn/silver/sales  # Auto-generated

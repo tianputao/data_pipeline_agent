@@ -1,0 +1,37 @@
+job_name: ingest_pgsql_to_databricks
+description: "Extract data from PostgreSQL and load to Databricks Unity Catalog bronze layer"
+
+source:
+  type: postgres                 # Options: postgres, mysql, sqlserver
+  jdbc_url: jdbc:postgresql://[填写主机名].postgres.database.chinacloudapi.cn:5432/[填写数据库名]
+  table: public.orders           # Format: schema.table (PostgreSQL defaults to 'public' schema)
+  frequency: daily
+  # increment_field: updated_at  # Optional: for incremental extraction
+  options:
+    user: [填写用户名]
+    password: [填写密码]
+    sslmode: require             # Required for Azure PostgreSQL
+
+transformations:
+  select: ["*"]                  # ["*"] for all fields, or specify: [order_id, customer_id, amount, updated_at]
+  # rename:                      # Optional: rename columns
+  #   old_name: new_name
+  # convert:                     # Optional: convert data types
+  #   column_name: string/int/float/double/boolean
+  # filter:                      # Optional: filter rows
+  #   condition: "amount > 100"
+  # aggregate:                   # Optional: aggregation
+  #   group_by: [customer_id]
+  #   metrics:
+  #     amount: sum
+
+sink:
+  type: delta                    # Always use delta for Unity Catalog
+  catalog: uc_tarhone            # Unity Catalog name (must be created in workspace)
+  database: test                 # Schema name in Unity Catalog
+  table: orders                  # Table name
+  layer: bronze                  # Options: bronze, silver, gold
+  mode: overwrite                # Options: overwrite, append
+  options: {}                    # Additional Delta Lake options (usually empty for managed tables)
+  # path: abfss://container@storage.dfs.core.chinacloudapi.cn/bronze/test/orders  # Auto-generated for managed tables
+

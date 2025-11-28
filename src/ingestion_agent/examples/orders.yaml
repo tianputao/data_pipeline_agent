@@ -1,0 +1,38 @@
+job_name: ingest_mysql_to_databricks
+description: "Extract data from MySQL and load to Databricks Unity Catalog bronze layer"
+
+source:
+  type: mysql  # Options: postgres, mysql, sqlserver
+  jdbc_url: jdbc:mysql://【填写主机名】.mysql.database.chinacloudapi.cn:3306/【填写数据库名】
+  table: orders  # MySQL doesn't use schema prefix, just table name
+  frequency: daily
+  increment_field: updated_at  # Optional: for incremental extraction (timestamp column)
+  options:
+    user: 【填写用户名】
+    password: 【填写密码】
+    # useSSL: "true"  # Optional: for MySQL SSL connections
+
+transformations:
+  select: ["*"]  # Select specific fields
+  # rename:  # Optional: rename columns for business clarity
+  #   amount: amount_usd
+  #   updated_at: ts
+  # convert:  # Optional: convert data types
+  #   amount_usd: float
+  # # filter:  # Optional: filter rows
+  # #   condition: "amount > 100 AND status = 'completed'"
+  # aggregate:  # Optional: aggregation for analytics
+  #   group_by: [customer_id]
+  #   metrics:
+  #     amount_usd: sum  # Options: sum, avg, min, max, count
+
+sink:
+  type: delta  # Always use delta for Unity Catalog
+  catalog: uc_tarhone  # Unity Catalog name (must be created in workspace)
+  database: gold  # Schema name (use bronze/silver/gold for data layers)
+  table: customer_summary  # Table name for aggregated data
+  layer: bronze  # Options: bronze, silver, gold
+  mode: append  # Options: overwrite, append (use append for incremental data)
+  options: {}  # Additional Delta Lake options
+  # path: abfss://container@storage.dfs.core.chinacloudapi.cn/gold/customer_summary  # Auto-generated
+
