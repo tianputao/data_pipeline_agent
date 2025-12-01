@@ -9,7 +9,6 @@
 - 📄 **YAML/JSON配置**: 适合高级用户和自动化场景
 - 🎯 **自动验证**: 缺少必要信息时会提示用户补充
 - ☁️ **Azure Databricks集成**: 一键提交到Databricks cluster执行
-- 🔐 **安全建议**: 内置安全提示，支持Key Vault集成
 
 ## 快速开始
 
@@ -24,7 +23,7 @@ cp .env.example .env
 AZURE_DATABRICKS_HOST=https://adb-xxx.azuredatabricks.net
 AZURE_DATABRICKS_TOKEN=dapi***
 DEFAULT_DATABRICKS_CLUSTER_ID=xxx-xxx-xxx
-DEFAULT_UNITY_CATALOG=uc_tarhone
+DEFAULT_UNITY_CATALOG=xxxxx
 ```
 
 ### 2. 安装
@@ -39,7 +38,7 @@ streamlit run src/ingestion_agent/ui/streamlit_app.py
 
 ## 使用方式
 
-### 方式1: 自然语言（推荐）
+### 方式1: 自然语言
 ```
 从 postgres hostname=mydb.postgres.database.azure.com 
 数据库=production 表=public.orders 
@@ -54,7 +53,7 @@ streamlit run src/ingestion_agent/ui/streamlit_app.py
 - ✅ 凭证 (username/password)
 - ✅ 目标表 (catalog.schema.table)
 
-### 方式2: 表单填写
+### 方式2: 表单填写 （推荐）
 1. 选择"Form (表单)"模式
 2. 填写源数据库信息
 3. 填写凭证（用户名密码）
@@ -63,18 +62,28 @@ streamlit run src/ingestion_agent/ui/streamlit_app.py
 
 ### 方式3: YAML配置
 ```yaml
+job_name: ingest_pgsql_to_databricks
+description: "Extract data from PostgreSQL and load to Databricks Unity Catalog bronze layer"
+
 source:
-  type: postgres
-  jdbc_url: jdbc:postgresql://host:5432/db
-  table: public.orders
+  type: postgres                 # Options: postgres, mysql, sqlserver
+  jdbc_url: jdbc:postgresql://[填写主机名].postgres.database.chinacloudapi.cn:5432/[填写数据库名]
+  table: public.orders           # Format: schema.table (PostgreSQL defaults to 'public' schema)
+  frequency: daily
+  # increment_field: updated_at  # Optional: for incremental extraction
   options:
-    user: admin
-    password: pass123
+    user: [填写用户名]
+    password: [填写密码]
+    sslmode: require             # Required for Azure PostgreSQL
 sink:
-  catalog: uc_tarhone
-  database: test
-  table: orders
-  mode: overwrite
+  type: delta                    # Always use delta for Unity Catalog
+  catalog: uc_tarhone            # Unity Catalog name (must be created in workspace)
+  database: test                 # Schema name in Unity Catalog
+  table: orders                  # Table name
+  layer: bronze                  # Options: bronze, silver, gold
+  mode: overwrite                # Options: overwrite, append
+  options: {}                    # Additional Delta Lake options (usually empty for managed tables)
+  # path: abfss://container@storage.dfs.core.chinacloudapi.cn/bronze/test/orders  # Auto-generated for managed tables
 ```
 
 ## 必要信息
@@ -90,8 +99,8 @@ sink:
 ### 目标 (Databricks)
 - ✅ Schema名称
 - ✅ 表名称
-- Catalog: 默认 uc_tarhone
-- 模式: 默认 overwrite
+- ✅ Catalog
+- ✅ 模式: 默认 overwrite
 
 ## 🔐 安全提示
 

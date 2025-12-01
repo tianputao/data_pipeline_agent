@@ -18,4 +18,4 @@ build/
 
 # 忽略 IDE 配置 (可选)
 .vscode/
-.idea/
+.idea
